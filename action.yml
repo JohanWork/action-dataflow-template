@@ -1,0 +1,16 @@
+name: Build Dataflow flex template. 
+description: Build and upload a dataflow flex template.
+author: Johan Hansson, Niklas Hansson
+inputs:
+  VERSION_GITHUB_SHA: 
+    description: Should github action also trigger the pipeline
+    required: false
+outputs:
+  WORKFLOW_URL:
+    description: URL that is a link to pipeline in Kubeflow
+branding:
+  color: 'purple'
+  icon: 'upload-cloud'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
