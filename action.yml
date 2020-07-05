@@ -1,0 +1,25 @@
+name: Build Dataflow flex template. 
+description: Build and upload a dataflow flex template.
+author: Johan Hansson and Niklas Hansson
+inputs:
+  VERSION_GITHUB_SHA: 
+    description: Should github action also trigger the pipeline
+    required: false
+  GOOGLE_APPLICATION_CREDENTIALS:
+    description: The path to the decoded google credentials
+    required: true
+  DOCKERIMAGE_PATH: 
+    description: The path to the docker image which will contain the dataflow job. 
+    required: true
+  GCP_BUCKET_PATH: 
+    description: The bucket and the path where the built. 
+    required: true
+outputs:
+  WORKFLOW_URL:
+    description: Link to the built job. 
+branding:
+  color: 'purple'
+  icon: 'upload-cloud'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

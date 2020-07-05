@@ -1,6 +1,6 @@
 # Github action to build Dataflow flex template - Python  
 
-This action builds (Dataflow flex templates)[https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/dataflow/flex-templates/streaming_beam/README.md]
+This action builds [Dataflow flex templates](https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/dataflow/flex-templates/streaming_beam/README.md)
 Github action to build flex templates for dataflow
 
 ## Github actions steps
