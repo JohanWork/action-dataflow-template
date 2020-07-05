@@ -5,17 +5,18 @@ inputs:
   VERSION_GITHUB_SHA: 
     description: Should github action also trigger the pipeline
     required: false
-  ENCODED_GOOGLE_APPLICATION_CREDENTIALS:
-    description: The base64 encoded google credentials
-    required: true
   GOOGLE_APPLICATION_CREDENTIALS:
     description: The path to the decoded google credentials
     required: true
   DOCKERIMAGE_PATH: 
     description: The path to the docker image which will contain the dataflow job. 
+    required: true
+  GCP_BUCKET_PATH: 
+    description: The bucket and the path where the built. 
+    required: true
 outputs:
   WORKFLOW_URL:
-    description: URL that is a link to pipeline in Kubeflow
+    description: Link to the built job. 
 branding:
   color: 'purple'
   icon: 'upload-cloud'
