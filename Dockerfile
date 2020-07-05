@@ -1,4 +1,3 @@
-  
 FROM python:3.8-alpine
 
 LABEL "com.github.actions.name"="Build Dataflow Flex Template"

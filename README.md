@@ -14,3 +14,8 @@ To run a template, you need to create a template spec file containing all the ne
 The metadata.json file contains additional information for the template such as the "name", "description", and input "parameters" field.
 
 The template file must be created in a Cloud Storage location, and is used to run a new Dataflow job.
+
+
+## TODO 
+
+Set up/ install gcloud 
