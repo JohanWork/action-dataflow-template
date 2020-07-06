@@ -1,8 +1,8 @@
 #!/bin/bash
 
+export TEMPLATE_IMAGE="gcr.io/$PROJECT/samples/dataflow/streaming-beam:latest"
 # Build image
-gcloud builds submit --tag "$TEMPLATE_IMAGE"
-
+gcloud builds submit --tag "$TEMPLATE_IMAGE" "$PATH_DOCKERFILE"
 
 # Build the Flex Template.
 gcloud beta dataflow flex-template build $TEMPLATE_PATH \
