@@ -8,11 +8,17 @@ inputs:
   GOOGLE_APPLICATION_CREDENTIALS:
     description: The path to the decoded google credentials
     required: true
+  IMAGE_TAG: 
+    description: The image tag for the docker image on gcloud container registry. 
+    required: true
   DOCKERIMAGE_PATH: 
     description: The path to the docker image which will contain the dataflow job. 
     required: true
-  GCP_BUCKET_PATH: 
+  TEMPLATE_PATH: 
     description: The bucket and the path where the built. 
+    required: true
+  INPUT_METADATA_PATH: 
+    description: The metadata file path. 
     required: true
 outputs:
   WORKFLOW_URL:
