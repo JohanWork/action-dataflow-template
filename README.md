@@ -15,6 +15,9 @@ The metadata.json file contains additional information for the template such as 
 
 The template file must be created in a Cloud Storage location, and is used to run a new Dataflow job.
 
+### Example 
+
+In the folder example thare is on exampel with apache-beam.
 
 ## TODO 
 

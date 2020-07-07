@@ -24,10 +24,10 @@ import argparse
 import json
 import logging
 import time
-
 import apache_beam as beam
-from apache_beam.options.pipeline_options import PipelineOptions
 import apache_beam.transforms.window as window
+
+from apache_beam.options.pipeline_options import PipelineOptions
 
 # Defines the BigQuery schema for the output table.
 SCHEMA = ','.join([
