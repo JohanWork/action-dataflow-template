@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# echo google credntilas to the name google recognices
-export GOOGLE_APPLICATION_CREDENTIALS=$(echo $INPUT_GOOGLE_APPLICATION_CREDENTIALS | rev)
-
-
-export TEMPLATE_IMAGE="gcr.io/$PROJECT/samples/dataflow/streaming-beam:latest"
 # Build image
 gcloud builds submit --tag "$TEMPLATE_IMAGE" "$PATH_DOCKERFILE"
 
