@@ -14,9 +14,6 @@ inputs:
   GCP_BUCKET_PATH: 
     description: The bucket and the path where the built. 
     required: true
-  METADATA_PATH: 
-    description: The path to metadata file. 
-    required: true
 outputs:
   WORKFLOW_URL:
     description: Link to the built job. 
