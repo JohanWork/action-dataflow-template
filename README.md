@@ -22,3 +22,10 @@ In the folder example thare is on exampel with apache-beam.
 ## TODO 
 
 Set up/ install gcloud 
+
+
+## How to run the action locally during  development
+
+brew install nektos/tap/act
+act -s GCP_PROJECT=ds-playground-237314 -s GCP_BUCKET=ds-playground-237314
+
