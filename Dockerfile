@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM google/cloud-sdk:latest
 
 LABEL "com.github.actions.name"="Build Dataflow Flex Template"
 LABEL "com.github.actions.icon"="upload-cloud"
