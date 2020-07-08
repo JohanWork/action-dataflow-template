@@ -17,7 +17,7 @@ inputs:
   TEMPLATE_PATH: 
     description: The bucket and the path where the built. 
     required: true
-  INPUT_METADATA_PATH: 
+  METADATA_PATH: 
     description: The metadata file path. 
     required: true
 outputs:
