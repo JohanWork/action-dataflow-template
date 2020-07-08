@@ -2,8 +2,8 @@ name: Dataflow flex template example
 on:
   push:
     branches:
-    - develop
-    - master 
+      - develop
+      - master 
 
 env:
   GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
@@ -14,18 +14,17 @@ jobs:
     name: Build the preprocessing image
     runs-on: ubuntu-latest 
     steps:
-    
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Build Dataflow flex template
-      env:
-        IMAGE_NAME: samples/dataflow/streaming-beam  
-      id: kubeflow
-      uses: JohanWork/action-dataflow-template@master
-      with:
-        GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_APPLICATION_CREDENTIALS
-        IMAGE_TAG:  gcr.io/$GCP_PROJECT/$IMAGE_NAME:$GITHUB_SHA
-        DOCKERIMAGE_PATH: example/.
-        TEMPLATE_PATH: gs://$GCP_PROJECT/$BUCKET_NAME/dataflow/templates/streaming-beam-$GITHUB_SHA.json
-        METADATA_PATH: example/metadata.json
+      - name: Build Dataflow flex template
+        env:
+          IMAGE_NAME: samples/dataflow/streaming-beam  
+        id: kubeflow
+        uses: JohanWork/action-dataflow-template@master
+        with:
+          GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_APPLICATION_CREDENTIALS
+          IMAGE_TAG:  gcr.io/$GCP_PROJECT/$IMAGE_NAME:$GITHUB_SHA
+          DOCKERIMAGE_PATH: example/.
+          TEMPLATE_PATH: gs://$BUCKET_NAME/dataflow/templates/streaming-beam-$GITHUB_SHA.json
+          METADATA_PATH: example/metadata.json
