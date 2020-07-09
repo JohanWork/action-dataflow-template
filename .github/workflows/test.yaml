@@ -21,12 +21,14 @@ jobs:
           BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
           GITHUB_SHA: 1231231412342
+          GCP_BUCKET: ${{secrets.GCP_BUCKET}}
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
         id: kubeflow
         uses: JohanWork/action-dataflow-template@master
         with:
           GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GKE_KEY}}
-          IMAGE_TAG:  gcr.io/${{ secrets.GCP_PROJECT }}/${{env.IMAGE_NAME}}:${{env.GITHUB_SHA}}
+          IMAGE_TAG:  gcr.io/${{ env.GCP_PROJECT }}/${{env.IMAGE_NAME}}:${{env.GITHUB_SHA}}
           DOCKERIMAGE_PATH: example/.
-          TEMPLATE_PATH: gs://${{secrets.GCP_BUCKET}}/dataflow/templates/streaming-beam.json
+          TEMPLATE_PATH: gs://${{env.GCP_BUCKET}}/dataflow/templates/streaming-beam.json
           METADATA_PATH: example/metadata.json
           GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
