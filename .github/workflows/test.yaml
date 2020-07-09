@@ -11,17 +11,16 @@ jobs:
     name: Build the preprocessing image
     runs-on: ubuntu-latest 
     steps:
-      - shell: bash
-        env:
-          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-          BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
+
       - name: Checkout
         uses: actions/checkout@master
 
       - name: Build Dataflow flex template
         env:
           IMAGE_NAME: samples/dataflow/streaming-beam  
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+          BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
         id: kubeflow
         uses: JohanWork/action-dataflow-template@master
         with:
