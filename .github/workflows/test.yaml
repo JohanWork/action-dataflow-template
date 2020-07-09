@@ -18,7 +18,6 @@ jobs:
       - name: Build Dataflow flex template
         env:
           IMAGE_NAME: samples/dataflow/streaming-beam  
-          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
           BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
         id: kubeflow
@@ -29,4 +28,4 @@ jobs:
           DOCKERIMAGE_PATH: example/.
           TEMPLATE_PATH: gs://"$BUCKET_NAME"/dataflow/templates/streaming-beam-"$GITHUB_SHA".json
           METADATA_PATH: example/metadata.json
-          GCP_PROJECT: "$GCP_PROJECT"
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
