@@ -21,7 +21,7 @@ jobs:
           BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
           GITHUB_SHA: 1231231412342
-          GCP_BUCKET: ${{secrets.GCP_BUCKET}}
+          GCP_BUCKET: glassy-groove-206311_cloudbuild
           GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
         id: kubeflow
         uses: JohanWork/action-dataflow-template@master
