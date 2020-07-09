@@ -24,7 +24,7 @@ jobs:
         uses: JohanWork/action-dataflow-template@master
         with:
           GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GKE_KEY}}
-          IMAGE_TAG:  gcr.io/"${{GCP_PROJECT}}"/"${{IMAGE_NAME}}":"${{GITHUB_SHA}}"
+          IMAGE_TAG:  "gcr.io/${{GCP_PROJECT}}/${{IMAGE_NAME}}:${{GITHUB_SHA}}"
           DOCKERIMAGE_PATH: example/.
-          TEMPLATE_PATH: gs://"${{BUCKET_NAME}}"/dataflow/templates/streaming-beam-"${{GITHUB_SHA}}".json
+          TEMPLATE_PATH: "gs://${{BUCKET_NAME}}/dataflow/templates/streaming-beam-${{GITHUB_SHA}}.json"
           METADATA_PATH: example/metadata.json
