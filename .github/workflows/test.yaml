@@ -5,15 +5,17 @@ on:
       - develop
       - master 
 
-env:
-  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-  BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
-  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
+
 jobs:
   build-preprocessing:
     name: Build the preprocessing image
     runs-on: ubuntu-latest 
     steps:
+      - shell: bash
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+          BUCKET_NAME: ${{ secrets.GCP_BUCKET }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
       - name: Checkout
         uses: actions/checkout@master
 
@@ -26,5 +28,5 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GKE_KEY}}
           IMAGE_TAG:  gcr.io/"$GCP_PROJECT"/"$IMAGE_NAME":"$GITHUB_SHA"
           DOCKERIMAGE_PATH: example/.
-          TEMPLATE_PATH: "gs://"$BUCKET_NAME"/dataflow/templates/streaming-beam-"$GITHUB_SHA".json"
+          TEMPLATE_PATH: gs://"$BUCKET_NAME"/dataflow/templates/streaming-beam-"$GITHUB_SHA".json
           METADATA_PATH: example/metadata.json
