@@ -29,3 +29,4 @@ jobs:
           DOCKERIMAGE_PATH: example/.
           TEMPLATE_PATH: gs://"$BUCKET_NAME"/dataflow/templates/streaming-beam-"$GITHUB_SHA".json
           METADATA_PATH: example/metadata.json
+          GCP_PROJECT: "$GCP_PROJECT"
