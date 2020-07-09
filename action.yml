@@ -20,6 +20,9 @@ inputs:
   METADATA_PATH: 
     description: The metadata file path. 
     required: true
+  GCP_PROJECT:
+    description: The GCP project
+    required: true
 outputs:
   WORKFLOW_URL:
     description: Link to the built job. 
