@@ -4,7 +4,7 @@ echo "${INPUT_GOOGLE_APPLICATION_CREDENTIALS}" | base64 -d > "${HOME}/gcloud.jso
 gcloud auth activate-service-account --key-file="${HOME}/gcloud.json" --project "${INPUT_GCP_PROJECT}"
 
 # Build image
-gcloud builds submit --tag "$INPUT_IMAGE_TAG" "$INPUT_PATH_DOCKERFILE"
+gcloud builds submit --tag "$INPUT_IMAGE_TAG" "$INPUT_DOCKERIMAGE_PATH"
 
 # Build the Flex Template.
 gcloud beta dataflow flex-template build $INPUT_TEMPLATE_PATH \
