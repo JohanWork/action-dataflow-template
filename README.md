@@ -1,7 +1,16 @@
 # Github action to build Dataflow flex template - Python  
 
 This action builds [Dataflow flex templates](https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/dataflow/flex-templates/streaming_beam/README.md)
-Github action to build flex templates for dataflow
+Github action to build flex templates for dataflow. The action expect the GOOGLE_APPLICATION_CREDENTIALS input to be a bas64 encoded service key. To base64 decode a json key you can use 
+
+```bash
+    base64 gke_key.josn 
+```
+You need to have enabled the following api.
+
+- Cloud Build
+- Cloud Storage
+- Container Registry
 
 ## Github actions steps
 
@@ -19,13 +28,7 @@ The template file must be created in a Cloud Storage location, and is used to ru
 
 In the folder example thare is on exampel with apache-beam.
 
-## TODO 
-
-Set up/ install gcloud 
-
-
 ## How to run the action locally during  development
 
 brew install nektos/tap/act
-act -s GCP_PROJECT=ds-playground-237314 -s GCP_BUCKET=ds-playground-237314
-
+act -s GCP_PROJECT=<your project> -s GCP_BUCKET=<your bucket> -s GKE_KEY=<GKE key base64 decoded>
