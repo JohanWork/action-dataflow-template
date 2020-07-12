@@ -17,7 +17,7 @@ jobs:
         env:
           IMAGE_NAME: samples/dataflow/streaming-beam  
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GKE_KEY }}
-          GITHUB_SHA: $GITHUB_SHA
+          GITHUB_SHA: 112232
         id: kubeflow
         uses: JohanWork/action-dataflow-template@master
         with:
