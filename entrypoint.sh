@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 echo "${INPUT_GOOGLE_APPLICATION_CREDENTIALS}" | base64 -d > "${HOME}/gcloud.json" 
 gcloud auth activate-service-account --key-file="${HOME}/gcloud.json" --project "${INPUT_GCP_PROJECT}"
 
