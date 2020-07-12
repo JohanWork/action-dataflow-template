@@ -12,6 +12,8 @@ You need to have enabled the following api.
 - Cloud Storage
 - Container Registry
 
+To run the action you also need to give the service key access to view all of the project or add viewr to the bucket at least if you want more fine graine control. Connectet to this [issue](https://github.com/GoogleCloudPlatform/github-actions/issues/105)
+
 ## Github actions steps
 
 ### Build container
