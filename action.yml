@@ -20,9 +20,6 @@ inputs:
   GCP_PROJECT:
     description: The GCP project
     required: true
-outputs:
-  WORKFLOW_URL:
-    description: Link to the built job. 
 branding:
   color: 'purple'
   icon: 'upload-cloud'
